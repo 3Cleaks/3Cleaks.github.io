@@ -65,11 +65,18 @@
             font-size: 1.5em;
             margin-top: 20px;
             display: none; /* nascosta inizialmente */
+            font-weight: bold; /* testo in grassetto */
+            animation: fadeInMessage 2s ease-out forwards; /* animazione di dissolvenza */
         }
 
-        .locked-message span {
-            font-size: 2em; /* icona del lucchetto più grande */
-            margin-left: 10px;
+        /* Animazione di dissolvenza del messaggio */
+        @keyframes fadeInMessage {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -81,7 +88,7 @@
 
     <!-- Messaggio di accesso negato -->
     <div class="locked-message">
-        NON DISPONIBILE <span>🔒</span>
+        NON DISPONIBILE
     </div>
 
     <script>
@@ -94,8 +101,10 @@
             alert("Codice errato. Accesso negato.");
             // Rimuove i pulsanti se il codice è errato
             document.querySelectorAll('.button').forEach(button => button.style.display = 'none');
-            // Mostra il messaggio di accesso negato
-            document.querySelector('.locked-message').style.display = 'block';
+            // Mostra il messaggio di accesso negato con animazione
+            const lockedMessage = document.querySelector('.locked-message');
+            lockedMessage.style.display = 'block';
+            lockedMessage.classList.add('fadeInMessage');
         }
 
     </script>
