@@ -4,34 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3C LEAKS</title>
-    <!-- Collegamento al file CSS esterno -->
-    <link rel="stylesheet" href="styles.css">
-        <style>
-        /* Impostazioni per la schermata iniziale con sfondo Google */
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Impostazioni per lo sfondo Google */
         body {
             margin: 0;
             padding: 0;
             height: 100vh;
-            background: url('https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png') no-repeat center center;
-            background-size: 500px auto;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            color: white;
             font-family: Arial, sans-serif;
+            background-color: black;
         }
 
-        /* Modulo per l'accesso */
-        .access-form {
-            position: absolute;
-            top: 40%;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
+        /* Modulo di accesso (screen con embed di Google) */
+        #googleEmbed {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 400px;
+            height: 100%;
+            background: url('https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png') no-repeat center center;
+            background-size: 300px auto;
+            z-index: 9999;
+        }
+
+        /* Il contenuto nascosto che viene mostrato dopo l'accesso */
+        #content {
+            display: none;
+            color: white;
+            text-align: center;
+            z-index: 10;
         }
 
         h1 {
@@ -39,7 +45,6 @@
             margin-bottom: 20px;
         }
 
-        /* Pulsanti di navigazione */
         .button {
             background-color: #4CAF50;
             color: white;
@@ -63,7 +68,7 @@
             background-color: #367e39;
         }
 
-        /* Messaggio di errore */
+        /* Messaggio di errore per codice errato */
         .locked-message {
             color: red;
             font-size: 1.5em;
@@ -84,20 +89,24 @@
     </style>
 </head>
 <body>
+    <!-- Embed di Google (occupando tutto lo schermo) -->
+    <div id="googleEmbed">
+        <!-- Il contenuto di Google o qualsiasi altro elemento che occupi l'intero schermo -->
+    </div>
 
-    <!-- Titolo iniziale -->
-    <h1>3C LEAKS</h1>
-    
-    <!-- Pulsanti per navigazione -->
-    <button class="button" onclick="window.location.href='francese.html'">Francese</button>
-    <button class="button" onclick="window.location.href='matematica.html'">Matematica</button>
+    <!-- Contenuto da visualizzare dopo l'accesso -->
+    <div id="content">
+        <h1>3C LEAKS</h1>
+        <button class="button" onclick="window.location.href='francese.html'">Francese</button>
+        <button class="button" onclick="window.location.href='matematica.html'">Matematica</button>
+    </div>
 
-    <!-- Messaggio di errore che appare se il codice è errato -->
-    <div class="locked-message">
+    <!-- Messaggio di errore -->
+    <div class="locked-message" id="lockedMessage">
         NON DISPONIBILE
     </div>
 
-    <!-- Collegamento al file JavaScript esterno -->
-    <script src="script.js"></script>
+    <!-- Collegamento al file JavaScript -->
+    <script src="js/script.js"></script>
 </body>
 </html>
