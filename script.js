@@ -4,10 +4,10 @@
 function chiediAccesso() {
     // Codice di accesso impostato
     const codiceAccesso = "1234";  
-    const titolo = document.querySelector('h1');
-    const accessForm = document.getElementById('accessForm');
+    const googleEmbed = document.getElementById('googleEmbed');
     const content = document.getElementById('content');
     const lockedMessage = document.getElementById('lockedMessage');
+    const titolo = document.querySelector('h1');
 
     // Richiesta del codice di accesso all'utente
     let codiceInserito = prompt("Inserisci il codice per accedere:");
@@ -15,21 +15,14 @@ function chiediAccesso() {
     // Verifica se il codice è corretto
     if (codiceInserito !== codiceAccesso) {
         alert("Codice errato. Accesso negato.");
-
-        // Cambia il titolo della pagina
-        titolo.textContent = "Not Found";
-
-        // Nasconde il contenuto protetto (pulsanti, link, ecc.)
-        document.querySelectorAll('.button').forEach(button => button.style.display = 'none');
-        document.querySelectorAll('.file-link').forEach(link => link.remove());
-
-        // Mostra il messaggio di errore con animazione
+        
+        // Mostra il messaggio di errore
         lockedMessage.style.display = 'block';
         lockedMessage.classList.add('fadeInMessage');
     } else {
-        // Se il codice è corretto, mostra il contenuto
-        content.style.display = 'block';
-        accessForm.style.display = 'none'; // Nasconde il modulo di accesso
+        // Se il codice è corretto, nasconde l'iframe di Google e mostra il contenuto
+        googleEmbed.style.display = 'none';  // Nasconde l'iframe di Google
+        content.style.display = 'block';     // Mostra il contenuto
     }
 }
 
