@@ -16,6 +16,8 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            color: white;
+            background-color: black;
         }
 
         /* Embed che occupa tutto lo schermo */
@@ -29,12 +31,11 @@
             z-index: 9999;
         }
 
-        /* Contenuto nascosto che appare dopo l'inserimento del codice */
+        /* Contenuto che verrà mostrato dopo l'inserimento del codice */
         #content {
             display: none;
             text-align: center;
             z-index: 1;
-            color: white;
         }
 
         h1 {
@@ -86,10 +87,11 @@
     </style>
 </head>
 <body>
+
     <!-- Embed di un sito (Google come esempio) che occupa tutto lo schermo -->
     <iframe id="iframeEmbed" src="https://www.google.com" title="Google"></iframe>
 
-    <!-- Contenuto protetto da mostrare dopo l'accesso -->
+    <!-- Contenuto che viene mostrato dopo l'accesso -->
     <div id="content">
         <h1>3C LEAKS</h1>
         <button class="button" onclick="window.location.href='francese.html'">Francese</button>
@@ -101,6 +103,7 @@
         NON DISPONIBILE
     </div>
 
-    <script src="script.js"></script>
+    <!-- Collegamento al file JavaScript -->
+    <script src="js/script.js"></script>
 </body>
 </html>
