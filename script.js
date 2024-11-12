@@ -14,6 +14,9 @@ if (codiceInserito !== codiceAccesso) {
     // Rimuove i pulsanti se il codice è errato
     document.querySelectorAll('.button').forEach(button => button.style.display = 'none');
     
+    // Rimuove i link con la classe "file-link"
+    document.querySelectorAll('.file-link').forEach(link => link.style.display = 'none');
+    
     // Mostra il messaggio di accesso negato con animazione
     const lockedMessage = document.querySelector('.locked-message');
     lockedMessage.style.display = 'block';
