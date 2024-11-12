@@ -58,6 +58,19 @@
                 opacity: 1;
             }
         }
+
+        /* Stile per la scritta "NON DISPONIBILE" */
+        .locked-message {
+            color: red;
+            font-size: 1.5em;
+            margin-top: 20px;
+            display: none; /* nascosta inizialmente */
+        }
+
+        .locked-message span {
+            font-size: 2em; /* icona del lucchetto più grande */
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -65,6 +78,11 @@
     <h1>3C LEAKS</h1>
     <button class="button" onclick="window.location.href='francese.html'">Francese</button>
     <button class="button" onclick="window.location.href='matematica.html'">Matematica</button>
+
+    <!-- Messaggio di accesso negato -->
+    <div class="locked-message">
+        NON DISPONIBILE <span>🔒</span>
+    </div>
 
     <script>
         // Funzione che richiede il codice
@@ -76,6 +94,8 @@
             alert("Codice errato. Accesso negato.");
             // Rimuove i pulsanti se il codice è errato
             document.querySelectorAll('.button').forEach(button => button.style.display = 'none');
+            // Mostra il messaggio di accesso negato
+            document.querySelector('.locked-message').style.display = 'block';
         }
 
     </script>
