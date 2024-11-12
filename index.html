@@ -4,40 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3C LEAKS</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Impostazioni per lo sfondo Google */
+        /* Sfondo che occupa tutto lo schermo */
         body {
             margin: 0;
             padding: 0;
             height: 100vh;
             overflow: hidden;
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            font-family: Arial, sans-serif;
-            background-color: black;
         }
 
-        /* Modulo di accesso (screen con embed di Google) */
-        #googleEmbed {
-            position: fixed;
+        /* Embed che occupa tutto lo schermo */
+        #iframeEmbed {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png') no-repeat center center;
-            background-size: 300px auto;
+            border: none;
             z-index: 9999;
         }
 
-        /* Il contenuto nascosto che viene mostrato dopo l'accesso */
+        /* Contenuto nascosto che appare dopo l'inserimento del codice */
         #content {
             display: none;
-            color: white;
             text-align: center;
-            z-index: 10;
+            z-index: 1;
+            color: white;
         }
 
         h1 {
@@ -89,24 +86,21 @@
     </style>
 </head>
 <body>
-    <!-- Embed di Google (occupando tutto lo schermo) -->
-    <div id="googleEmbed">
-        <!-- Il contenuto di Google o qualsiasi altro elemento che occupi l'intero schermo -->
-    </div>
+    <!-- Embed di un sito (Google come esempio) che occupa tutto lo schermo -->
+    <iframe id="iframeEmbed" src="https://www.google.com" title="Google"></iframe>
 
-    <!-- Contenuto da visualizzare dopo l'accesso -->
+    <!-- Contenuto protetto da mostrare dopo l'accesso -->
     <div id="content">
         <h1>3C LEAKS</h1>
         <button class="button" onclick="window.location.href='francese.html'">Francese</button>
         <button class="button" onclick="window.location.href='matematica.html'">Matematica</button>
     </div>
 
-    <!-- Messaggio di errore -->
+    <!-- Messaggio di errore se il codice è sbagliato -->
     <div class="locked-message" id="lockedMessage">
         NON DISPONIBILE
     </div>
 
-    <!-- Collegamento al file JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
