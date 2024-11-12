@@ -1,30 +1,24 @@
 // script.js
 
-// Funzione per gestire l'accesso e nascondere l'iframe
-function chiediAccesso() {
-    // Codice di accesso corretto
-    const codiceAccesso = "1234";  
-    const iframeEmbed = document.getElementById('iframeEmbed');
-    const content = document.getElementById('content');
-    const lockedMessage = document.getElementById('lockedMessage');
+// Funzione che richiede il codice e gestisce l'accesso
+const codiceAccesso = "1234";  // Imposta il codice che desideri
+let codiceInserito = prompt("Inserisci il codice per accedere:");
 
-    // Richiesta del codice di accesso all'utente
-    let codiceInserito = prompt("Inserisci il codice per accedere:");
-
-    // Verifica se il codice è corretto
-    if (codiceInserito !== codiceAccesso) {
-        // Se il codice è errato
-        alert("Codice errato. Accesso negato.");
-        
-        // Mostra il messaggio di errore
-        lockedMessage.style.display = 'block';
-        lockedMessage.classList.add('fadeInMessage');
-    } else {
-        // Se il codice è corretto
-        iframeEmbed.style.display = 'none';  // Nasconde l'iframe che occupa lo schermo
-        content.style.display = 'block';     // Mostra il contenuto
-    }
+// Verifica se il codice inserito è corretto
+if (codiceInserito !== codiceAccesso) {
+    alert("Codice errato. Accesso negato.");
+    
+    // Cambia il titolo da "3C LEAKS" a "Not Found"
+    document.querySelector('h1').textContent = "Not Found";
+    
+    // Rimuove i pulsanti se il codice è errato
+    document.querySelectorAll('.button').forEach(button => button.style.display = 'none');
+    
+    // Rimuove i link con la classe "file-link"
+    document.querySelectorAll('.file-link').forEach(link => link.remove());
+    
+    // Mostra il messaggio di accesso negato con animazione
+    const lockedMessage = document.querySelector('.locked-message');
+    lockedMessage.style.display = 'block';
+    lockedMessage.classList.add('fadeInMessage');
 }
-
-// Esegui la funzione di accesso quando la pagina viene caricata
-window.onload = chiediAccesso;
