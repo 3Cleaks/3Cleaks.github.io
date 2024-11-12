@@ -4,106 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3C LEAKS</title>
-    <style>
-        /* Sfondo che occupa tutto lo schermo */
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            color: white;
-            background-color: black;
-        }
-
-        /* Embed che occupa tutto lo schermo */
-        #iframeEmbed {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-            z-index: 9999;
-        }
-
-        /* Contenuto che verrà mostrato dopo l'inserimento del codice */
-        #content {
-            display: none;
-            text-align: center;
-            z-index: 1;
-        }
-
-        h1 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 20px 40px;
-            font-size: 1.5em;
-            margin: 10px;
-            cursor: pointer;
-            border-radius: 10px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .button:hover {
-            transform: scale(1.1);
-            background-color: #45a049;
-        }
-
-        .button:active {
-            transform: scale(1);
-            background-color: #367e39;
-        }
-
-        /* Messaggio di errore per codice errato */
-        .locked-message {
-            color: red;
-            font-size: 1.5em;
-            margin-top: 20px;
-            display: none;
-            font-weight: bold;
-            animation: fadeInMessage 2s ease-out forwards;
-        }
-
-        @keyframes fadeInMessage {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
+    <!-- Collegamento al file CSS esterno -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <!-- Embed di un sito (Google come esempio) che occupa tutto lo schermo -->
-    <iframe id="iframeEmbed" src="https://www.google.com" title="Google"></iframe>
+    <!-- Titolo iniziale -->
+    <h1>3C LEAKS</h1>
+    
+    <!-- Pulsanti per navigazione -->
+    <button class="button" onclick="window.location.href='francese.html'">Francese</button>
+    <button class="button" onclick="window.location.href='matematica.html'">Matematica</button>
 
-    <!-- Contenuto che viene mostrato dopo l'accesso -->
-    <div id="content">
-        <h1>3C LEAKS</h1>
-        <button class="button" onclick="window.location.href='francese.html'">Francese</button>
-        <button class="button" onclick="window.location.href='matematica.html'">Matematica</button>
-    </div>
-
-    <!-- Messaggio di errore se il codice è sbagliato -->
-    <div class="locked-message" id="lockedMessage">
+    <!-- Messaggio di errore che appare se il codice è errato -->
+    <div class="locked-message">
         NON DISPONIBILE
     </div>
 
-    <!-- Collegamento al file JavaScript -->
+    <!-- Link che verranno rimossi se il codice è errato -->
+    <a href="leaks/francese/imperfait1-1211.jpg" class="file-link">Imperfait (1)</a>
+
+    <!-- Collegamento al file JavaScript esterno -->
     <script src="js/script.js"></script>
 </body>
 </html>
