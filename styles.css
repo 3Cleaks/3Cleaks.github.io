@@ -1,75 +1,24 @@
-/* styles.css */
+// script.js
 
-/* Sfondo nero e testo centrato */
-body {
-    background-color: black;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+// Funzione che richiede il codice e gestisce l'accesso
+const codiceAccesso = "1234";  // Imposta il codice che desideri
+let codiceInserito = prompt("Inserisci il codice per accedere:");
 
-h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    animation: fadeIn 2s ease-out;
-}
-
-/* Animazione pulsanti */
-.button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 20px 40px;
-    font-size: 1.5em;
-    margin: 10px;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.button:hover {
-    transform: scale(1.1);
-    background-color: #45a049;
-}
-
-.button:active {
-    transform: scale(1);
-    background-color: #367e39;
-}
-
-/* Animazione di fade-in */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Stile per la scritta "NON DISPONIBILE" */
-.locked-message {
-    color: red;
-    font-size: 1.5em;
-    margin-top: 20px;
-    display: none; /* nascosta inizialmente */
-    font-weight: bold; /* testo in grassetto */
-    animation: fadeInMessage 2s ease-out forwards; /* animazione di dissolvenza */
-}
-
-/* Animazione di dissolvenza del messaggio */
-@keyframes fadeInMessage {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+// Verifica se il codice inserito è corretto
+if (codiceInserito !== codiceAccesso) {
+    alert("Codice errato. Accesso negato.");
+    
+    // Cambia il titolo da "3C LEAKS" a "Not Found"
+    document.querySelector('h1').textContent = "Not Found";
+    
+    // Rimuove i pulsanti se il codice è errato
+    document.querySelectorAll('.button').forEach(button => button.style.display = 'none');
+    
+    // Rimuove i link con la classe "file-link"
+    document.querySelectorAll('.file-link').forEach(link => link.style.display = 'none');
+    
+    // Mostra il messaggio di accesso negato con animazione
+    const lockedMessage = document.querySelector('.locked-message');
+    lockedMessage.style.display = 'block';
+    lockedMessage.classList.add('fadeInMessage');
 }
