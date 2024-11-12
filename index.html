@@ -61,8 +61,23 @@
     </style>
 </head>
 <body>
+
     <h1>3C LEAKS</h1>
     <button class="button" onclick="window.location.href='francese.html'">Francese</button>
     <button class="button" onclick="window.location.href='matematica.html'">Matematica</button>
+
+    <script>
+        // Funzione che richiede il codice
+        const codiceAccesso = "1234";  // Imposta il codice che desideri
+        let codiceInserito = prompt("Inserisci il codice per accedere:");
+
+        // Verifica se il codice inserito è corretto
+        if (codiceInserito !== codiceAccesso) {
+            alert("Codice errato. Accesso negato.");
+            // Rimuove i pulsanti se il codice è errato
+            document.querySelectorAll('.button').forEach(button => button.style.display = 'none');
+        }
+
+    </script>
 </body>
 </html>
