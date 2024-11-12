@@ -4,132 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3C LEAKS</title>
-    <link rel="stylesheet" href="css/styles.css">?
-    <style>
-        /* Sfondo nero e testo centrato */
-        body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            position: relative;
-        }
-
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            animation: fadeIn 2s ease-out;
-        }
-
-        /* Animazione pulsanti */
-        .button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 20px 40px;
-            font-size: 1.5em;
-            margin: 10px;
-            cursor: pointer;
-            border-radius: 10px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .button:hover {
-            transform: scale(1.1);
-            background-color: #45a049;
-        }
-
-        .button:active {
-            transform: scale(1);
-            background-color: #367e39;
-        }
-
-        /* Animazione di fade-in */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Stile per la scritta "NON DISPONIBILE" */
-        .locked-message {
-            color: red;
-            font-size: 1.5em;
-            margin-top: 20px;
-            display: none; /* nascosta inizialmente */
-            font-weight: bold; /* testo in grassetto */
-            animation: fadeInMessage 2s ease-out forwards; /* animazione di dissolvenza */
-        }
-
-        /* Animazione di dissolvenza del messaggio */
-        @keyframes fadeInMessage {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Stile per il background GIF */
-        .background-gif {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://i.pinimg.com/originals/88/1e/97/881e975af06ff67857544c7b64e65cbc.gif'); /* Cambia con la tua GIF */
-            background-size: cover;
-            background-position: center;
-            opacity: 0.5; /* Restringe l'opacità della GIF per non oscurare il contenuto */
-            z-index: -1; /* Mette la GIF dietro agli altri contenuti */
-        }
-
-    </style>
+    <!-- Collegamento al file CSS esterno -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
+    <!-- Titolo iniziale -->
     <h1>3C LEAKS</h1>
+    
+    <!-- Pulsanti per navigazione -->
     <button class="button" onclick="window.location.href='francese.html'">Francese</button>
     <button class="button" onclick="window.location.href='matematica.html'">Matematica</button>
 
-    <!-- Messaggio di accesso negato -->
+    <!-- Messaggio di errore che appare se il codice è errato -->
     <div class="locked-message">
         NON DISPONIBILE
     </div>
 
-    <!-- Background GIF -->
-    <div class="background-gif"></div>
-
-    <script>
-        // Funzione che richiede il codice
-        const codiceAccesso = "1234";  // Imposta il codice che desideri
-        let codiceInserito = prompt("Inserisci il codice per accedere:");
-
-        // Verifica se il codice inserito è corretto
-        if (codiceInserito !== codiceAccesso) {
-            alert("Codice errato. Accesso negato.");
-            // Cambia il titolo da 3C LEAKS a Not Found
-            document.querySelector('h1').textContent = "Not Found";
-            // Rimuove i pulsanti se il codice è errato
-            document.querySelectorAll('.button').forEach(button => button.style.display = 'none');
-            // Mostra il messaggio di accesso negato con animazione
-            const lockedMessage = document.querySelector('.locked-message');
-            lockedMessage.style.display = 'block';
-            lockedMessage.classList.add('fadeInMessage');
-        }
-
-    </script>
+    <!-- Collegamento al file JavaScript esterno -->
     <script src="js/script.js"></script>
 </body>
 </html>
