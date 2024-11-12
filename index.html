@@ -1,1 +1,68 @@
-Niente qui ;)
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3C LEAKS</title>
+    <style>
+        /* Sfondo nero e testo centrato */
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Animazione pulsanti */
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.5em;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            background-color: #45a049;
+        }
+
+        .button:active {
+            transform: scale(1);
+            background-color: #367e39;
+        }
+
+        /* Animazione di fade-in */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>3C LEAKS</h1>
+    <button class="button" onclick="window.location.href='francese.html'">Francese</button>
+    <button class="button" onclick="window.location.href='matematica.html'">Matematica</button>
+</body>
+</html>
