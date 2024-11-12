@@ -6,6 +6,82 @@
     <title>3C LEAKS</title>
     <!-- Collegamento al file CSS esterno -->
     <link rel="stylesheet" href="styles.css">
+        <style>
+        /* Impostazioni per la schermata iniziale con sfondo Google */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: url('https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png') no-repeat center center;
+            background-size: 500px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Modulo per l'accesso */
+        .access-form {
+            position: absolute;
+            top: 40%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        /* Pulsanti di navigazione */
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.5em;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            background-color: #45a049;
+        }
+
+        .button:active {
+            transform: scale(1);
+            background-color: #367e39;
+        }
+
+        /* Messaggio di errore */
+        .locked-message {
+            color: red;
+            font-size: 1.5em;
+            margin-top: 20px;
+            display: none;
+            font-weight: bold;
+            animation: fadeInMessage 2s ease-out forwards;
+        }
+
+        @keyframes fadeInMessage {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
 
