@@ -1,24 +1,37 @@
 // script.js
 
-// Funzione che richiede il codice e gestisce l'accesso
-const codiceAccesso = "1234";  // Imposta il codice che desideri
-let codiceInserito = prompt("Inserisci il codice per accedere:");
+// Funzione per gestire la schermata di accesso
+function chiediAccesso() {
+    // Codice di accesso impostato
+    const codiceAccesso = "1234";  
+    const titolo = document.querySelector('h1');
+    const accessForm = document.getElementById('accessForm');
+    const content = document.getElementById('content');
+    const lockedMessage = document.getElementById('lockedMessage');
 
-// Verifica se il codice inserito è corretto
-if (codiceInserito !== codiceAccesso) {
-    alert("Codice errato. Accesso negato.");
-    
-    // Cambia il titolo da "3C LEAKS" a "Not Found"
-    document.querySelector('h1').textContent = "Not Found";
-    
-    // Rimuove i pulsanti se il codice è errato
-    document.querySelectorAll('.button').forEach(button => button.style.display = 'none');
-    
-    // Rimuove i link con la classe "file-link"
-    document.querySelectorAll('.file-link').forEach(link => link.style.display = 'none');
-    
-    // Mostra il messaggio di accesso negato con animazione
-    const lockedMessage = document.querySelector('.locked-message');
-    lockedMessage.style.display = 'block';
-    lockedMessage.classList.add('fadeInMessage');
+    // Richiesta del codice di accesso all'utente
+    let codiceInserito = prompt("Inserisci il codice per accedere:");
+
+    // Verifica se il codice è corretto
+    if (codiceInserito !== codiceAccesso) {
+        alert("Codice errato. Accesso negato.");
+
+        // Cambia il titolo della pagina
+        titolo.textContent = "Not Found";
+
+        // Nasconde il contenuto protetto (pulsanti, link, ecc.)
+        document.querySelectorAll('.button').forEach(button => button.style.display = 'none');
+        document.querySelectorAll('.file-link').forEach(link => link.remove());
+
+        // Mostra il messaggio di errore con animazione
+        lockedMessage.style.display = 'block';
+        lockedMessage.classList.add('fadeInMessage');
+    } else {
+        // Se il codice è corretto, mostra il contenuto
+        content.style.display = 'block';
+        accessForm.style.display = 'none'; // Nasconde il modulo di accesso
+    }
 }
+
+// Esegui la funzione di accesso quando la pagina viene caricata
+window.onload = chiediAccesso;
