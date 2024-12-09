@@ -1,7 +1,7 @@
 // script.js
 
 // Funzione che richiede il codice e gestisce l'accesso
-const codiceAccesso = "salv3c5412612";  // Imposta il codice che desideri
+const codiceAccesso = "c0digolol54";  // Imposta il codice che desideri
 let codiceInserito = prompt("Inserisci il codice per accedere:");
 
 // Verifica se il codice inserito è corretto
